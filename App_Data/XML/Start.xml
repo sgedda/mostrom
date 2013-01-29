@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<startpage>
+  <images>
+    <image filePath="C:\Users\Administrator\Documents\Visual Studio 2008\Websites\Markus Moström Design\_lib\img\start\Frangipani Flowers.jpg" />'
+    <image filePath="C:\Users\Administrator\Documents\Visual Studio 2008\Websites\Markus Moström Design\_lib\img\start\Garden.jpg" /><image filePath="C:\Users\Administrator\Documents\Visual Studio 2008\Websites\Markus Moström Design\_lib\img\start\Waterfall.jpg" /></images>
+  <text>Welcome to the website of Markus Moström Design where you will find information of the recent, current and future work of the design studio. Take also part of our thoughts on graphic design and other subjects at the crossroad of architecture, design and visual arts.</text>
+  <ulHeight>300</ulHeight>
+  <archiveUlHeight>330</archiveUlHeight>
+</startpage>

@@ -1,0 +1,114 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" Inherits="Moström.MasterPage" CodeBehind="MasterPage.master.cs" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title></title>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div id="container">
+            <div id="header">
+                <%if (Session["loggedIn"] == "true")
+                  { %>
+                <div id="logout">
+                    <asp:LinkButton ID="lnkLogout" OnClick="lnkLogout_Click" Text="Logout" ForeColor="White" runat="server" /></div>
+                <%} %>
+<%--                <div id="logo"><a href="./">
+                    <img src="_lib2/img/logo.jpg" runat="server" id="imgLogo" /></a></div>--%>
+                <a href="/" style="background-image:url('/_lib2/img/logo.jpg');width:200px;height:100px;float:left;"></a>
+                <ul>
+                    <%if (Request.FilePath.ToLower().Contains("default"))
+                      { %>
+                    <li id="index" class="active"><a href="./">Start</a></li>
+                    <%}
+                      else
+                      { %>
+                    <li id="index"><a href="./">Start</a></li>
+                    <%} %>
+
+                    <%if (Request.FilePath.Contains("About"))
+                      { %>
+                    <li id="about" class="active"><a href="./About.aspx">About</a></li>
+                    <%}
+                      else
+                      { %>
+                    <li id="about"><a href="./About.aspx">About</a></li>
+                    <%} %>
+
+                    <%if (Request.FilePath.Contains("Works"))
+                      { %>
+                    <li id="work" class="active"><a href="./Works.aspx">Selected Works</a></li>
+                    <%}
+                      else
+                      { %>
+                    <li id="work"><a href="./Works.aspx">Selected Works</a></li>
+                    <%} %>
+
+                    <%if (Request.FilePath.Contains("Inspiration"))
+                      { %>
+                    <li id="inspiration" class="active"><a href="./Inspiration.aspx">Inspiration</a></li>
+                    <%}
+                      else
+                      { %>
+                    <li id="inspiration"><a href="./Inspiration.aspx">Inspiration</a></li>
+                    <%} %>
+
+                    <%if (Request.FilePath.Contains("References"))
+                      { %>
+                    <li id="ref" class="active"><a href="./References.aspx">References</a></li>
+                    <%}
+                      else
+                      { %>
+                    <li id="ref"><a href="./References.aspx">References</a></li>
+                    <%} %>
+
+                    <%if (Request.FilePath.Contains("Contact"))
+                      { %>
+                    <li id="contact" class="active"><a href="./Contact.aspx">Contact</a></li>
+                    <%}
+                      else
+                      { %>
+                    <li id="contact"><a href="./Contact.aspx">Contact</a></li>
+                    <%} %>
+                    <%--                    <li></li>
+		            <li><a href="Admin/Default.aspx">ADMIN</a></li>--%>
+                </ul>
+                <%if (Session["loggedIn"] == "true")
+                  { %>
+                <div id="headerAdmin">
+                    <ul>
+                        <%if (Request.FilePath.Contains("Admin/Default"))
+                          { %>
+                        <li><a href="Admin/Default.aspx">Index</a></li>
+                        <%}
+                          else
+                          { %>
+                        <li><a href="Admin/Default.aspx">Index</a></li>
+                        <%} %>
+                        <li><a href="Admin/About.aspx">About</a></li>
+                        <li><a href="Admin/Contact.aspx">Contact</a></li>
+                        <li><a href="Admin/References.aspx">References</a></li>
+                        <li><a href="Admin/EnjoySection.aspx">Enjoy Section</a></li>
+                        <li><a href="Admin/Works.aspx">Works</a></li>
+                        <li><a href="Admin/ProjectArchive.aspx">Project Archive</a></li>
+                        <li><a href="Admin/ThoughtsOnDesign.aspx">Design Thoughts</a></li>
+                    </ul>
+                </div>
+                <%} %>
+            </div>
+
+            <div id="contentContainer">
+                <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                </asp:ContentPlaceHolder>
+            </div>
+        </div>
+        <div id="footer">
+            <div id="copyright">All rights reserved &copy; 2009 Markus Moström Design</div>
+        </div>
+    </form>
+</body>
+</html>
